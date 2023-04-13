@@ -12,8 +12,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="dType" )
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) //단일테이블 전략 : 서비스 규모가 크지않고 조인전략을 선택해서 복잡하게 갈 필요가 없을때 하는거다!
+@DiscriminatorColumn(name="dType" ) //부모클래스로 선언하는거......... 하위 클래스를 구분하는 용도의 컬이다!
 public abstract class Item {
 
     @Id
