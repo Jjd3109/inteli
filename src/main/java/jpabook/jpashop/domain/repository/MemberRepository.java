@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor //리콰이어드아규컨스트럭트를 사용해줌으로써 서비스단에랑
+@RequiredArgsConstructor //리콰이어드아규컨스트럭트를 사용해준다 !!!!!! requiredArgsConstructor 는 레포지토리에 다 적어준다!! 왜냐면 ,,
 public class MemberRepository {
     //dao역할을 해준다.............
     //dto는 domain에 다적어주고.......
@@ -29,7 +29,9 @@ public class MemberRepository {
 
     public Member findOne(Long id){
         return em.find(Member.class, id);
-    }
+    } //member클래스의 id에 넣어준다 !
+
+
 
     public List<Member> findAll(){
         return em.createQuery("select m from Member m", Member.class).getResultList();

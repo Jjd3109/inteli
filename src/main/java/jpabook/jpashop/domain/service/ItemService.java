@@ -21,8 +21,8 @@ public class ItemService {
     }
 
 
-    public Item findItem(Item item){
-       return itemRepository.findOne(item.getId());
+    public Item findItem(Long itemId){
+       return itemRepository.findOne(itemId);
     }
 
     public List<Item> findAll(){

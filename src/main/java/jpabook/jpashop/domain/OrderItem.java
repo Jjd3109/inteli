@@ -32,7 +32,7 @@ public class OrderItem {
         orderItem.setOrderPrice(orderPrice);
         orderItem.setCount(count);
 
-        item.removeStock(count);
+        item.removeStock(count); //만들어서 넣어줬으면 있는 아이템의 개수를 제거해줘야한다...
         return orderItem;
     }
 

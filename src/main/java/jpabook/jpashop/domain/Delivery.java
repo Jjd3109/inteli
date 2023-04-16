@@ -21,5 +21,5 @@ public class Delivery {
     private Address address;
 
     @Enumerated(EnumType.STRING) // 무조건 String 만 쓰기
-    private DeliveryStatus status; //Ready
+    private DeliveryStatus status; //Ready, Comp // 두개를 받아서 쓰는거!!! enumerated ,, = 받아서 써준다
 }

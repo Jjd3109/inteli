@@ -9,6 +9,9 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+//ddd 방식으로써 domain이 주로 생각하고,,,,,,,, 그렇기 때문에 item 때문에
 @Entity
 @Getter
 @Setter

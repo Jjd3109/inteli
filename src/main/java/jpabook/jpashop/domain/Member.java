@@ -20,7 +20,7 @@ public class Member {
     private String name;
 
     @Embedded
-    private Address address;
+    private Address address; //embedded 안에 다잇다 하나씩 여기서 만들어주는것도 좋지만 따로 빼서 관리하는게 편해서 해준다 !!
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
