@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class) // db까지 연결해서 확인해주기 위해서 ....... 만들어주는거 runwith + springBootTest 엮어서!!
@@ -60,6 +63,37 @@ public class MemberServiceTest {
 
         //then
         fail("예외가 발생해야합니다");
+    }
+
+    @Test
+    public void 테스트(){
+//        Map<String, Object> test1 = new HashMap<>();
+//        Object[] test2 = new Object[2];
+//        test2[0] = 1;
+//        test2[1] = 2;
+//        System.out.println("test2 값" + test2.toString());
+//
+//        test1.put("1번자리", test2);
+//        test1.put("2번자리", test2);
+//
+//        System.out.println("test1.get(\"1번자리\").toString() 번자리 + " + test1.get("1번자리").getClass().toString());
+
+
+        Map<String, Object> test1 = new HashMap<>();
+
+        Map<String, Object> test2 = new HashMap<>();
+        test2.put("나는", "바보다");
+        test2.put("2번나는", "진짜바보다");
+
+        test1.put("1번자리", test2);
+        test1.put("2번자리", test2);
+
+        for(String key : test2.keySet()){
+            System.out.println("키값 :" + key);
+            System.out.println("밸류값 : " + test2.get(key));
+        }
+
+
     }
 
 

@@ -63,18 +63,20 @@ public class ItemController {
         return "items/updateItemForm";
     }
 
-    @PostMapping(value = "/items/{itemId}/edit")
-    public String updateItem(@ModelAttribute("form") BookForm form) {
-        Book book = new Book();
+    @PostMapping(value = "/items/{itemId}/edit") //merge로 호출된다 merge는 없으면 null값으로 치환하기 때문에 조심해야한다. 실무에서는 merge절대안씀!!!!! itemService에서 확인
+    public String updateItem(@ModelAttribute("form") BookForm form, @PathVariable Long itemId) {
+//        Book book = new Book();
+//
+//        book.setId(form.getId());
+//        book.setName(form.getName());
+//        book.setPrice(form.getPrice());
+//        book.setStockQuantity(form.getStockQuantity());
+//        book.setAuthor(form.getAuthor());
+//        book.setIsbn(form.getIsbn());
+//
+//        itemService.saveItem(book);
 
-        book.setId(form.getId());
-        book.setName(form.getName());
-        book.setPrice(form.getPrice());
-        book.setStockQuantity(form.getStockQuantity());
-        book.setAuthor(form.getAuthor());
-        book.setIsbn(form.getIsbn());
-
-        itemService.saveItem(book);
+        itemService.updateItem(itemId, form.getName(), form.getPrice(), form.getStockQuantity()); //컨트롤러에서 별도의 entity를 만들지말고 service에서 만들어서 해라!
         return "redirect:/items";
     }
 }
