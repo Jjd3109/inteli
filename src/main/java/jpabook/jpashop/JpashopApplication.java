@@ -1,21 +1,20 @@
 package jpabook.jpashop;
 
+import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class JpashopApplication {
 
     public static void main(String[] args) {
-
-        hello hel = new hello();
-        hel.setData("hello");
-        String data = hel.getData();
-        System.out.println("data 값 : " + data);
-        System.out.println("test값 ~!~!~1");
-
-
         SpringApplication.run(JpashopApplication.class, args);
     }
+
+//    @Bean
+//    Hibernate5Module hibernate5Module(){
+//        return new Hibernate5Module();
+//    }
 
 }
