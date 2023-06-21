@@ -17,9 +17,9 @@ public class SimpleOrderQueryDto{
 
     public SimpleOrderQueryDto(Order order){
         orderId = order.getId();
-        name = order.getMember().getName();
+        name = order.getMember().getName(); //Lazy초기화
         orderDate = order.getOrderDate();
         orderStatus = order.getStatus();
-        address = order.getDelivery().getAddress();
+        address = order.getDelivery().getAddress();//Lazy초기화
     }
 }
